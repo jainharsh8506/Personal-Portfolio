@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Contact - Tunis Personal Portfolio</title>
+    <title>Contact - Harsh Personal Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Template Google Fonts -->
@@ -28,10 +28,48 @@
 
     <!-- Modernizr JS File -->
     <script src="js/modernizr.custom.js"></script>
+    <style>
+      .loader-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+      }
+
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
 
   <body class="contact light">
     <!-- Header Starts -->
+    <div id="formLoader" class="loader-container">
+      <div class="loader"></div>
+    </div>
     <header class="header" id="navbar-collapse-toggle">
       <!-- Fixed Navigation Starts -->
       <ul
@@ -61,10 +99,16 @@
             <h2>Contact</h2>
           </a>
         </li>
-        <li class="icon-box">
+        <!-- <li class="icon-box">
           <i class="fa fa-comments"></i>
           <a href="blog.html">
             <h2>Blog</h2>
+          </a>
+        </li> -->
+        <li class="icon-box">
+          <i class="fa fa-adjust"></i>
+          <a onclick="toggleTheme()">
+            <h2>Theme</h2>
           </a>
         </li>
       </ul>
@@ -97,11 +141,11 @@
                 ><i class="fa fa-envelope-open"></i><span>Contact</span></a
               >
             </li>
-            <li>
+            <!-- <li>
               <a href="blog.html"
                 ><i class="fa fa-comments"></i><span>Blog</span></a
               >
-            </li>
+            </li> -->
           </ul>
         </div>
       </nav>
@@ -129,29 +173,43 @@
             </h3>
             <p class="open-sans-font mb-3">
               Feel free to get in touch with me. I am always open to discussing
-              new projects, creative ideas or opportunities to be part of your
-              visions.
+              new projects, job opportunities, creative ideas or opportunities
+              to be part of your visions.
             </p>
             <p class="open-sans-font custom-span-contact position-relative">
               <i class="fa fa-envelope-open position-absolute"></i>
-              <span class="d-block">mail me</span>lucy@mail.com
+              <span class="d-block">mail me</span>jainharsh8506@gmail.com
             </p>
             <p class="open-sans-font custom-span-contact position-relative">
               <i class="fa fa-phone-square position-absolute"></i>
-              <span class="d-block">call me</span>+216 21 184 010
+              <span class="d-block">call me</span>+918506833512
             </p>
             <ul class="social list-unstyled pt-1 mb-5">
-              <li class="facebook">
-                <a title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+              <li class="linkedin">
+                <a
+                  title="LinkedIn"
+                  href="https://www.linkedin.com/in/jainharsh8506/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
               </li>
-              <li class="twitter">
-                <a title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+              <li class="github">
+                <a title="GitHub" href="https://github.com/jainharsh8506"
+                  ><i class="fa fa-github"></i
+                ></a>
               </li>
               <li class="youtube">
-                <a title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
+                <a
+                  title="Youtube"
+                  href="https://www.youtube.com/@technonibba8560"
+                  ><i class="fa fa-youtube"></i
+                ></a>
               </li>
-              <li class="dribbble">
-                <a title="Dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              <li class="instagram">
+                <a
+                  title="Instagram"
+                  href="https://www.instagram.com/harsh_jain8506/"
+                  ><i class="fa fa-instagram"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -192,7 +250,6 @@
                     <span
                       class="output_message text-center font-weight-600 text-uppercase"
                     ></span>
-                    <button onclick="toggleTheme()">Toggle Theme</button>
                   </div>
                 </div>
               </div>
