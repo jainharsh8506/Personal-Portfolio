@@ -1,14 +1,17 @@
 
 <?php
+require "vendor/autoload.php";
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-$nameFrom = "Harsh Jain";
-$emailFrom = "jainharsh8506@gmail.com";
+$nameFrom = $_ENV['NAME'];
+$emailFrom = $_ENV['MAIL_USERNAME'];
 $senderEmail = $_POST['email'];
 $senderName = $_POST['name'];
 $senderSubject = $_POST['subject'];
 $senderMessage = $_POST['message'];
 
-require "vendor/autoload.php";
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -21,12 +24,12 @@ $mail2 = new PHPMailer(true);
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 
-$mail->Host = "smtp.gmail.com";
+$mail->Host = $_ENV['MAIL_HOST'];
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;
+$mail->Port = $_ENV['MAIL_PORT'];;
 
-$mail->Username = "jainharsh8506@gmail.com";
-$mail->Password = "mara yezo ztki zqqn";
+$mail->Username = $_ENV['MAIL_USERNAME'];
+$mail->Password = $_ENV['MAIL_PASSWORD'];
 
 $mail->setFrom($emailFrom, $nameFrom);
 $mail->addAddress($emailFrom, $nameFrom);
@@ -56,12 +59,12 @@ echo ($send_email) ? 'success' : 'error';
 $mail2->isSMTP();
 $mail2->SMTPAuth = true;
 
-$mail2->Host = "smtp.gmail.com";
+$mail2->Host = $_ENV['MAIL_HOST'];
 $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail2->Port = 587;
+$mail2->Port = $_ENV['MAIL_PORT'];
 
-$mail2->Username = "jainharsh8506@gmail.com";
-$mail2->Password = "mara yezo ztki zqqn";
+$mail2->Username = $_ENV['MAIL_USERNAME'];
+$mail2->Password = $_ENV['MAIL_PASSWORD'];
 
 $mail2->setFrom($emailFrom, $nameFrom);
 $mail2->addAddress($senderEmail, $senderName);
